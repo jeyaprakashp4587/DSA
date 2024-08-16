@@ -1,16 +1,24 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 int main() {
-    vector <string> arr = {"flower","flow","flight"};
+    vector <string> arr = {"flights","flowring","flibling"};
     string result;
-    for (int i = 0; i < arr.size(); i++)
-    {
-         for (int j = 0; j < arr[i].size(); j++) {
-            result += arr[i][j]; 
-        }
+    // sort(arr.begin(),arr.end());
+    string firstElement = arr[0];
+     string lastElement = arr[arr.size() -1];
+    for (int i = 0; i < firstElement.size(); i++)
+    { 
+     if (firstElement[i] == lastElement[i])
+     {
+       result +=firstElement[i];
+     }
+     else{
+        break;
+     }
     }
-    
+    cout<<result;
     return 0;
 }

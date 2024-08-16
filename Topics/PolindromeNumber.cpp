@@ -5,6 +5,7 @@ int main() {
     cin>>c;
     int check = c;
     int reversed =0;
+     int k ;
     if (check < 0)    
 {
         return false;
@@ -15,11 +16,11 @@ int main() {
      reversed  = reversed *10 +digit;
      c /= 10; 
     }
-    
-    if(reversed == check){
-        cout<<"Yes";
-    }
-    else{
-        cout<<"no";
-    } 
+
+    // if(reversed == check){
+    //     cout<<"Yes";
+    // }
+    // else{
+    //     cout<<"no";
+    // } 
 }
