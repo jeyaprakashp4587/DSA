@@ -10,7 +10,6 @@ int main()
     {
         sqr = i;
     }
-
     if (sqr * sqr == n)
     {
         result = true;
