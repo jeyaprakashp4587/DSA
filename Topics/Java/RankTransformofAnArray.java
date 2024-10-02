@@ -22,7 +22,7 @@ public class RankTransformofAnArray {
   }
  
     public static void main(String[] args) {
-         int [] arr = {100,100,100};
+         int [] arr = {40,10,20,30};
        RankTransformofAnArray rank = new RankTransformofAnArray();
       int[] result = rank.sorts(arr);
       for (int i : result) {
