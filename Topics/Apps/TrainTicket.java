@@ -71,17 +71,27 @@ public class TrainTicket {
 
             switch (choice) {
                 case 1:
-                    displayAvailableTrains();
+                    for (Train train : trains) {
+                        train.displayTrainInfo();
+                    }
                     break;
                 case 2:
                     bookTicket(scanner);
                     break;
                 case 3:
-                    displayBookings();
+                    if (bookings.isEmpty()) {
+                        System.out.println("booking is empty");
+                        return;
+                    } else {
+                        for (Booking book : bookings) {
+                            book.displayBookingInfo();
+                        }
+                    }
                     break;
                 case 4:
                     System.out.println("Thank you for using the Train Ticket Booking System!");
                     System.exit(0);
+                case 5:
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
@@ -92,13 +102,6 @@ public class TrainTicket {
         trains.add(new Train(101, "Express Train", "Chennai", "Bangalore", 100, 500.0));
         trains.add(new Train(102, "Superfast Train", "Delhi", "Mumbai", 50, 1000.0));
         trains.add(new Train(103, "Intercity Train", "Kolkata", "Hyderabad", 75, 750.0));
-    }
-
-    public static void displayAvailableTrains() {
-        System.out.println("\nAvailable Trains:");
-        for (Train train : trains) {
-            train.displayTrainInfo();
-        }
     }
 
     public static void bookTicket(Scanner scanner) {
@@ -133,14 +136,4 @@ public class TrainTicket {
         }
     }
 
-    public static void displayBookings() {
-        System.out.println("\nBooking Details:");
-        if (bookings.isEmpty()) {
-            System.out.println("No bookings found.");
-        } else {
-            for (Booking booking : bookings) {
-                booking.displayBookingInfo();
-            }
-        }
-    }
 }
